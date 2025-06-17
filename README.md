@@ -100,9 +100,9 @@ The most interesting takeaway from this project was the use of **Unsloth**, whic
 
 ## ▶️ Demo Video
 
-Watch a quick demonstration of the Gradio application in action(If broken:
+Watch a quick demonstration of the Gradio application in action(If broken: (https://drive.google.com/file/d/1IEl9ca7OdULCLQkZAP8QbiZiSIvvI40y/view?usp=sharing))
 
-[![Gradio App Demo](https://drive.google.com/file/d/1IEl9ca7OdULCLQkZAP8QbiZiSIvvI40y/view?usp=sharing)](/portfolio_interface.mp4)
+[![Gradio App Demo]](/portfolio_interface.mp4)
 
 ---
 
