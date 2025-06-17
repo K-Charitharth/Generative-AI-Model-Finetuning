@@ -62,6 +62,8 @@ Ensure you have Python 3.9+ installed.
     ```
     (Generate `requirements.txt` using `pip freeze > requirements.txt` after installing all necessary libraries like `unsloth`, `datasets`, `unbabel-comet`, `gradio`, `trl`, `transformers`, `torch`, `requests`, `python-dotenv`, `matplotlib`).
 
+Note: I have used Google Collab T4 gpu(Free tier)
+
 ### 🔑 API Key Setup
 
 This project uses the **Together.ai API** for synthetic data generation.
@@ -100,9 +102,7 @@ The most interesting takeaway from this project was the use of **Unsloth**, whic
 
 ## ▶️ Demo Video
 
-Watch a quick demonstration of the Gradio application in action(If broken: (https://drive.google.com/file/d/1IEl9ca7OdULCLQkZAP8QbiZiSIvvI40y/view?usp=sharing))
-
-[![Gradio App Demo]](/portfolio_interface.mp4)
+Watch a quick demonstration of the Gradio application in action from the link: https://drive.google.com/file/d/1IEl9ca7OdULCLQkZAP8QbiZiSIvvI40y/view?usp=sharing
 
 ---
 
