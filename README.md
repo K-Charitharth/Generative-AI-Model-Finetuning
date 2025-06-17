@@ -2,43 +2,75 @@
 
 ![COMET Scores Comparison](/comet_comparision.png)
 
-This project demonstrates efficient fine-tuning of Large Language Models (LLMs) for German-to-French translation using the [Unsloth](https://github.com/unslothai/unsloth) library. The implementation features data augmentation through synthetic data generation and evaluates translation quality using the COMET metric. The solution achieves competitive translation quality with 4x faster training compared to traditional methods.
+This project explores the efficient fine-tuning of a Large Language Model (LLM) using the [Unsloth](https://github.com/unslothai/unsloth) library. We focus on German-to-French translation using a benchmark dataset, with enhancements via data augmentation using a larger language model and evaluation through the COMET metric.
 
-## 🧠 Key Features
+---
 
-- **Ultra-Fast Fine-tuning**: Uses QLoRA via Unsloth for 4x faster training
-- **Data Augmentation**: Generates synthetic training data using Mistral 7B
-- **Semantic Evaluation**: Utilizes COMET metric for translation quality assessment
-- **Modular Architecture**: OOP-based design for maintainability and extensibility
-- **Interactive Demo**: Gradio interface for real-time translations
-- **Resource Efficiency**: Runs on a single GPU (T4/A100)
+## 📌 Project Overview
 
-## 📊 Performance Comparison
+-   **Goal:** Improve translation performance of a pre-trained LLM using efficient fine-tuning with Unsloth.
+-   **Use Case:** German → French translation
+-   **Highlights:**
+    -   Fine-tuning with **QLoRA via Unsloth** for speed and memory efficiency.
+    -   **Data augmentation** via synthetic translations (using Mistral 7B Instruct / Qwen2.5-Coder-32B-Instruct via Together.ai).
+    -   Evaluation using the **COMET score** for robust translation quality assessment.
+    -   **Google Colab-compatible**, enabling efficient training on a single GPU (T4 / A100).
+    -   Interactive **Gradio UI** for real-time translation.
 
-| Model Version          | Training Data          | COMET Score | Training Time |
-|------------------------|------------------------|-------------|---------------|
-| Model A (Base)         | None                   | 0.65        | -             |
-| Model B (Original)     | Original (800 samples) | 0.67        | 45 min        |
-| Model C (Synthetic)    | Synthetic (1600 samples) | 0.65        | 60 min        |
-| Model D (Combined)     | Combined (2400 samples) | 0.67        | 75 min        |
+---
+
+## 🧠 Key Technologies
+
+| Component | Description |
+| :---------------------- | :------------------------------------------------------------------------------------------------------ |
+| **Unsloth** | Ultra-fast QLoRA fine-tuning framework for LLMs, offering significant speedups and memory savings. |
+| **LLM (Base)** | Qwen2.5-1.5B-Instruct via HuggingFace Transformers, chosen for its balance of size and performance. |
+| **LLM (Synthetic Data)** | Mistral 7B Instruct / Qwen2.5-Coder-32B-Instruct via Together.ai for high-quality synthetic data generation. |
+| **Evaluation Metric** | [COMET](https://unbabel.github.io/COMET/) for advanced semantic-level translation quality assessment. |
+| **Data Format** | Parallel sentence pairs (German-French) from OPUS-100 dataset. |
+| **Platform** | Google Colab (T4 / A100 GPU) for accelerated training and development. |
+| **User Interface** | [Gradio](https://www.gradio.app/) for an intuitive, interactive web application. |
+| **Environment Management** | `python-dotenv` for secure handling of API keys. |
+
+---
 
 ## 🚀 Getting Started
 
+Follow these steps to set up and run the project.
+
 ### Prerequisites
-- Python 3.10+
-- GPU with ≥16GB VRAM (NVIDIA T4/A100 recommended)
-- Hugging Face account and API token
-- Together API key (for synthetic data generation)
 
-### Installation
+Ensure you have Python 3.9+ installed.
 
-```bash
-# Clone repository
-git clone https://github.com/yourusername/german-french-translator.git
-cd german-french-translator
+### 📦 Installation
 
-# Install dependencies
-pip install -r requirements.txt
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/yourusername/german-french-translation.git](https://github.com/yourusername/german-french-translation.git)
+    cd german-french-translation
+    ```
 
-# Install Unsloth (CUDA 12.1)
-pip install "unsloth[cu121] @ git+https://github.com/unslothai/unsloth.git"
+2.  **Create a virtual environment (recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate # On Windows: .\venv\Scripts\activate
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    (Generate `requirements.txt` using `pip freeze > requirements.txt` after installing all necessary libraries like `unsloth`, `datasets`, `unbabel-comet`, `gradio`, `trl`, `transformers`, `torch`, `requests`, `python-dotenv`, `matplotlib`).
+
+### 🔑 API Key Setup
+
+This project uses the **Together.ai API** for synthetic data generation.
+
+1.  **Obtain an API Key:** Sign up on [Together.ai](https://www.together.ai/) and generate an API key.
+2.  **Create a `.env` file:** In the root directory of the project, create a file named `.env` and add your API key:
+    ```
+    TOGETHER_API_KEY="your_together_ai_api_key_here"
+    ```
+    **Never commit your `.env` file to version control!** It's already added to `.gitignore` to prevent this.
+
+### Project Structure
