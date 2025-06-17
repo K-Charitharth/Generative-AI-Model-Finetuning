@@ -1,6 +1,6 @@
 # ⚡ Fast Fine-Tuning of Language Models using Unsloth for German-French Translation
 
-![COMET Scores Comparison]()
+![COMET Scores Comparison](/comet_comparision.png)
 
 This project demonstrates efficient fine-tuning of Large Language Models (LLMs) for German-to-French translation using the [Unsloth](https://github.com/unslothai/unsloth) library. The implementation features data augmentation through synthetic data generation and evaluates translation quality using the COMET metric. The solution achieves competitive translation quality with 4x faster training compared to traditional methods.
 
