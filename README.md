@@ -46,8 +46,8 @@ Ensure you have Python 3.9+ installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/german-french-translation.git](https://github.com/yourusername/german-french-translation.git)
-    cd german-french-translation
+    git clone https://github.com/K-Charitharth/Generative-AI-Model-Finetuning.git
+    cd Generative-AI-Model-Finetuning
     ```
 
 2.  **Create a virtual environment (recommended):**
@@ -73,4 +73,49 @@ This project uses the **Together.ai API** for synthetic data generation.
     ```
     **Never commit your `.env` file to version control!** It's already added to `.gitignore` to prevent this.
 
-### Project Structure
+## 🔍 Insights
+
+* **Unsloth's Efficiency:** Unsloth drastically reduced fine-tuning time while maintaining accuracy, making LLM adaptation feasible on consumer-grade GPUs.
+* **Synthetic Data Impact:** Synthetic data from Mistral 7B / Qwen2.5-Coder-32B boosted generalization capabilities, especially useful in scenarios with limited real-world annotated data. It helps the model learn diverse linguistic patterns.
+* **COMET vs. BLEU:** COMET proved effective for semantic-level evaluation, providing a more nuanced assessment of translation quality compared to traditional metrics like BLEU scores, which primarily focus on n-gram overlap.
+* **Combined Data Advantage:** While Model B and D achieved the same score in this run, often combining diverse datasets (original + synthetic) can provide a more robust and generalized model. The slightly lower score for Model C might indicate that purely synthetic data, while beneficial, might lack the nuanced distribution of real data for this specific task compared to Model B.
+
+---
+
+## 🧠 Lessons Learned
+
+The most interesting takeaway from this project was the use of **Unsloth**, which significantly reduced training time while allowing high-performance tuning of models as large as 7B parameters. Unlike traditional fine-tuning methods, Unsloth enables working on constrained hardware like Google Colab with remarkable speed, making LLM adaptation accessible to a broader range of developers. This opens doors for more rapid experimentation and iteration in specialized LLM applications.
+
+---
+
+## 📌 Future Work
+
+* **Extend to multilingual translation:** Explore fine-tuning for more complex scenarios, e.g., DE-FR-EN triplets.
+* **Optimize Synthetic Data Generation:** Experiment with different LLMs for synthetic data generation, diverse prompting strategies, and filtering techniques to improve synthetic data quality.
+* **Explore LoRA Merging:** Investigate merging LoRA weights back into the base model for easier and more efficient model deployment in production environments.
+* **Advanced Evaluation:** Incorporate human evaluation (if feasible) or more detailed error analysis beyond just COMET scores to identify specific areas of improvement.
+* **Deployment Optimizations:** Explore quantization (beyond 4-bit) and distillation techniques for even smaller, faster deployment.
+
+---
+
+## ▶️ Demo Video
+
+Watch a quick demonstration of the Gradio application in action:
+
+[![Gradio App Demo](link_to_your_video_thumbnail.jpg)](/portfolio_interface.mp4)
+
+---
+
+## 🤝 Acknowledgements
+
+* [Unsloth](https://github.com/unslothai/unsloth) for their incredible work on efficient fine-tuning.
+* [HuggingFace Transformers](https://huggingface.co/docs/transformers/index) for providing the foundation for LLM usage.
+* [COMET Evaluation](https://unbabel.github.io/COMET/) for advanced translation metric.
+* [Together.ai](https://www.together.ai/) for providing powerful LLMs for synthetic data generation.
+* [OPUS Dataset](https://opus.nlpl.eu/) for the benchmark German-French parallel corpus.
+
+---
+
+## 📜 License
+
+This project is open-source and distributed under the MIT License. See the `LICENSE` file for more details.
